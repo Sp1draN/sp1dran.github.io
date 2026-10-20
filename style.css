@@ -1,0 +1,578 @@
+
+/* =========================================
+   1. ОСНОВА САЙТА
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(
+        circle at 50% 0%,
+        #19132e 0%,
+        #080808 55%
+    );
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================
+   2. ПРОФИЛЬ НА ГЛАВНОЙ СТРАНИЦЕ
+========================================= */
+
+.profile {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+/* =========================================
+   3. АВАТАРКА И СТАТУС
+========================================= */
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #8b5cf6;
+    box-shadow: 0 0 25px #8b5cf655;
+    transition: 0.3s;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #8b5cf699;
+}
+
+.status {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background: #19c56b;
+}
+
+
+/* =========================================
+   4. ИМЯ, ПОДЗАГОЛОВОК И ОПИСАНИЕ
+========================================= */
+
+.name {
+    margin: 25px 0 15px;
+    font-size: 58px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #a78bfa,
+        #60a5fa
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.underline {
+    width: 90px;
+    height: 4px;
+    margin: 0 auto 25px;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #60a5fa
+    );
+
+    box-shadow: 0 0 15px #8b5cf655;
+}
+
+.role {
+    font-size: 24px;
+    color: #a5b8d0;
+}
+
+.description {
+    max-width: 500px;
+    margin: 20px auto 45px;
+    color: #9299a6;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   5. СОЦИАЛЬНЫЕ ССЫЛКИ
+========================================= */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.social-links a {
+    position: relative;
+    display: inline-block;
+    min-width: 130px;
+    padding: 18px 24px;
+    overflow: hidden;
+
+    border: 1px solid #293342;
+    border-radius: 10px;
+    background: #101010;
+    color: white;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.social-links a:hover {
+    color: #c4b5fd;
+    border-color: #8b5cf6;
+    background: #171323;
+    box-shadow: 0 0 20px #8b5cf622;
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   6. YOUTUBE-КНОПКА В ПРОФИЛЕ
+========================================= */
+
+.youtube {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+
+    color: white;
+    text-decoration: none;
+    background: #191010;
+    border: 1px solid #462020;
+    border-radius: 25px;
+
+    transition: 0.25s;
+}
+
+.youtube-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 19px;
+
+    color: white;
+    background: #ff0033;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.youtube:hover {
+    background: #2a1115;
+    border-color: #ff0033;
+    box-shadow: 0 0 18px #ff003333;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   7. БЛОКИ "ОБО МНЕ" И ДРУГИЕ СЕКЦИИ
+========================================= */
+
+.about {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    overflow: hidden;
+
+    background: #101010;
+    border: 1px solid #293342;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px #00000055;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #8e00b6,
+        #000000,
+        transparent
+    );
+}
+
+.about h2 {
+    position: relative;
+    padding-bottom: 12px;
+    font-size: 30px;
+}
+
+.about h2::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: #8b5cf6;
+}
+
+.about p {
+    color: #a5adbb;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   8. ТЕГИ ИНТЕРЕСОВ
+========================================= */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tags span {
+    padding: 10px 16px;
+    color: #c4b5fd;
+    background: #191426;
+    border: 1px solid #39285b;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.tags span:hover {
+    background: #30204a;
+    transform: translateY(-3px);
+}
+
+/* Ссылки на интересы */
+
+.interest,
+.interest:hover,
+.interest:visited,
+.interest:active {
+    color: #c4b5fd;
+    text-decoration: none;
+}
+
+.interest:hover {
+    color: #e4dcff;
+}
+
+/* Ссылка на YouTube-канал внутри тегов */
+
+.tags .youtube-tag {
+    display: inline-block;
+    padding: 10px 16px;
+
+    color: #c4b5fd;
+    background: #191426;
+    border: 1px solid #39285b;
+    border-radius: 20px;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.tags .youtube-tag:hover {
+    background: #30204a;
+    border-color: #8b5cf6;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   9. СТРАНИЦА GAMING
+========================================= */
+
+.game-card {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+
+    background: #191725;
+    color: white;
+
+    border: 1px solid #493477;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* Цветовая тема страницы info-me */
+.info-card {
+    background: #171426;
+    border-color: #59428a;
+}
+
+.info-card h1,
+.info-card h2 {
+    color: #e4dcff;
+}
+
+.info-card .bio-details dt {
+    color: #a78bfa;
+}
+
+.info-card .social-links a {
+    background: #201b32;
+    border-color: #493b70;
+}
+
+.info-card .social-links a:hover {
+    color: #ddd2ff;
+    background: #2b2145;
+    border-color: #a78bfa;
+}
+
+.info-card > .interest {
+    color: #c4b5fd;
+}
+
+.bio-intro {
+    line-height: 1.6;
+}
+
+.bio-details {
+    display: grid;
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.bio-details > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+}
+
+.bio-details dt {
+    color: #c4b5fd;
+    font-weight: bold;
+}
+
+.bio-details dd {
+    margin: 0;
+}
+
+.game-card > .interest {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+
+/* Отдельные игры */
+
+.game-item {
+    padding: 15px;
+    margin: 10px 0;
+
+    color: white;
+    background: #191426;
+
+    border: 1px solid #8b5cf6;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.button-center {
+    text-align: center;
+}
+
+.button-center .game-item {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Эффект при наведении */
+
+.game-item:hover {
+    background: #30204a;
+    border-color: #a78bfa;
+    box-shadow: 0 0 15px #8b5cf655;
+    transform: translateY(-3px);
+}
+
+
+
+/* =========================================
+   10. ПОДВАЛ САЙТА
+========================================= */
+
+footer {
+    padding: 25px;
+    color: #777;
+    text-align: center;
+}
+
+
+/* =========================================
+   11. АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ
+========================================= */
+
+@media (max-width: 600px) {
+    .profile {
+        padding: 35px 16px;
+    }
+
+    .name {
+        font-size: 42px;
+    }
+
+    .social-links a {
+        flex: 1 1 40%;
+        min-width: 0;
+        padding: 15px 10px;
+    }
+
+    .about {
+        margin: 0 16px 30px;
+        padding: 22px;
+    }
+}
+
+/* =========================================
+   12. IT
+========================================= */
+
+.it-card {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+
+    background: #191725;
+    color: white;
+
+    border: 1px solid #493477;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+/* код */
+
+.it-item {
+    padding: 15px;
+    margin: 10px 0;
+
+    color: white;
+    background: #191426;
+
+    border: 1px solid #8b5cf6;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+/* Эффект при наведении */
+
+.it-item:hover {
+    background: #30204a;
+    border-color: #a78bfa;
+    box-shadow: 0 0 15px #8b5cf655;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   13. YouTube
+========================================= */
+
+.youtube-card {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+
+    background: #191725;
+    color: white;
+
+    border: 1px solid #493477;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+/* код */
+
+.youtube-item {
+    padding: 15px;
+    margin: 10px 0;
+
+    color: white;
+    background: #191426;
+
+    border: 1px solid #8b5cf6;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+/* Эффект при наведении */
+
+.youtube-item:hover {
+    background: #ff0000;
+    border-color: #4004f2;
+    box-shadow: 0 0 15px #8b5cf655;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   13. all.html
+========================================= */
+
+.all-card {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+
+    background: #191725;
+    color: white;
+
+    border: 1px solid #493477;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+/* код */
+
+.all-item {
+    padding: 15px;
+    margin: 10px 0;
+
+    color: rgb(57, 0, 171);
+    background: #ff00c3;
+
+    border: 1px solid #00f7e3;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+/* Эффект при наведении */
+
+.all-item:hover {
+    background: #00fb60;
+    border-color: #00f5f9;
+    box-shadow: 0 0 15px #8b5cf655;
+    transform: translateY(-3px);
+}
